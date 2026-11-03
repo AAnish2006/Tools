@@ -1,0 +1,439 @@
+.wordcounter-page {
+  padding: 0.5rem 0;
+}
+
+.wc-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+}
+
+.wc-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Primary Metric Cards */
+.wc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.wc-stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.wc-stat-number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 0.2rem;
+}
+
+.wc-stat-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PLATFORM CHARACTER LIMIT SELECTOR & PROGRESS
+   ========================================================= */
+.wc-platform-selector-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.platform-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.platform-dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.platform-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.platform-icon {
+  font-size: 1.1rem;
+}
+
+.platform-dropdown {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.platform-dropdown:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: #ffffff;
+}
+
+.platform-quick-stats {
+  display: flex;
+  align-items: center;
+}
+
+.platform-status-badge {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.platform-status-badge.badge-safe {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.platform-status-badge.badge-exceeded {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  animation: pulseWarning 1.5s infinite;
+}
+
+@keyframes pulseWarning {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Progress Bar */
+.platform-progress-container {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.platform-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.progress-percent-label {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.platform-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.platform-progress-fill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 9999px;
+}
+
+.platform-progress-fill.fill-normal {
+  background: #10b981;
+}
+
+.platform-progress-fill.fill-warning {
+  background: #f59e0b;
+}
+
+.platform-progress-fill.fill-exceeded {
+  background: #ef4444;
+}
+
+/* Actions Toolbar */
+.wc-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn-trim {
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-color: #fca5a5 !important;
+  font-weight: 700 !important;
+}
+
+.toolbar-btn-trim:hover {
+  background: #fee2e2 !important;
+}
+
+/* Textarea with dynamic exceeded border */
+.wc-textarea {
+  width: 100%;
+  min-height: 240px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #0f172a;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.wc-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.wc-textarea.wc-textarea-exceeded {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.wc-textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   OVERFLOW HIGHLIGHTER PANEL (Highlights Extra Characters by Color)
+   ========================================================= */
+.overflow-highlighter-card {
+  margin-top: 1rem;
+  background: #fff5f5;
+  border: 2px solid #ef4444;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08);
+}
+
+.overflow-highlighter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.overflow-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.overflow-alert-icon {
+  font-size: 1.25rem;
+}
+
+.overflow-title-group h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin: 0;
+}
+
+.overflow-count-pill {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+}
+
+.btn-trim-action {
+  padding: 0.35rem 0.75rem;
+  background: #991b1b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-trim-action:hover {
+  background: #7f1d1d;
+}
+
+.overflow-instruction {
+  font-size: 0.85rem;
+  color: #7f1d1d;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+/* The Live Highlight Box */
+.overflow-visual-preview {
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-height: 250px;
+  overflow-y: auto;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.text-valid {
+  color: #1e293b;
+}
+
+/* Red Highlight on Extra/Overflow Characters */
+.text-excess {
+  background: #fca5a5 !important;
+  color: #7f1d1d !important;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px dashed #dc2626;
+  font-weight: 700;
+  animation: overflowGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes overflowGlow {
+  from { background-color: #fca5a5; }
+  to { background-color: #f87171; color: #ffffff; }
+}
+
+/* Keywords Table */
+.wc-keywords {
+  margin-top: 1.75rem;
+}
+
+.wc-keywords h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.keywords-table {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.keywords-header {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.keyword-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px;
+  padding: 0.65rem 1rem;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+.keyword-word {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.keyword-count {
+  color: #2563eb;
+  font-weight: 700;
+  text-align: center;
+}
+
+.keyword-density {
+  color: #10b981;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Responsive Desktop */
+@media (min-width: 640px) {
+  .platform-header-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .platform-dropdown-wrapper {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wc-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .wc-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wc-stat-number {
+    font-size: 2rem;
+  }
+
+  .wc-textarea {
+    min-height: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wc-stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

@@ -1,0 +1,439 @@
+/* Online Notepad Styles - Mobile First */
+.notepad-page {
+  padding: 0.5rem 0;
+}
+
+.notepad-header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.notepad-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Base Workspace Container */
+.notepad-workspace {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+/* =========================================================
+   FULL PAGE MODE: Expands Notepad to the ENTIRE Webpage
+   ========================================================= */
+body.notepad-fullpage-open {
+  overflow: hidden !important;
+}
+
+.notepad-workspace.fullpage-active {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  z-index: 9999999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.notepad-workspace.fullpage-active .notepad-toolbar {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0.6rem 1.25rem;
+  flex-shrink: 0;
+}
+
+.notepad-workspace.fullpage-active .notepad-editor {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+.notepad-workspace.fullpage-active .notepad-editor textarea {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-height: unset;
+  resize: none;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.notepad-workspace.fullpage-active .notepad-status {
+  border-radius: 0;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding: 0.5rem 1.25rem;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   DEFAULT DARK THEME (Eye-comfort, High Contrast)
+   ========================================================= */
+.notepad-workspace.dark-theme {
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.notepad-workspace.dark-theme .notepad-toolbar {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.notepad-workspace.dark-theme .notepad-editor textarea {
+  background: #090d16;
+  color: #f8fafc;
+  caret-color: #38bdf8;
+}
+
+.notepad-workspace.dark-theme .notepad-editor textarea::placeholder {
+  color: #475569;
+}
+
+.notepad-workspace.dark-theme .notepad-status {
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+}
+
+.notepad-workspace.dark-theme .toolbar-btn {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.notepad-workspace.dark-theme .toolbar-btn:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.notepad-workspace.dark-theme .toolbar-btn-danger:hover {
+  background: #7f1d1d;
+  color: #fecaca;
+  border-color: #991b1b;
+}
+
+.notepad-workspace.dark-theme .toolbar-btn-fullpage {
+  background: #1e3a8a;
+  color: #93c5fd;
+  border-color: #2563eb;
+}
+
+.notepad-workspace.dark-theme .toolbar-btn-fullpage:hover,
+.notepad-workspace.dark-theme .toolbar-btn-fullpage.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.notepad-workspace.dark-theme .theme-toggle-btn {
+  background: #f59e0b;
+  color: #0f172a;
+  font-weight: 700;
+  border-color: #d97706;
+}
+
+.notepad-workspace.dark-theme .theme-toggle-btn:hover {
+  background: #fbbf24;
+}
+
+.notepad-workspace.dark-theme .font-size-control {
+  color: #cbd5e1;
+}
+
+.notepad-workspace.dark-theme .fullpage-esc-hint {
+  color: #94a3b8;
+}
+
+.notepad-workspace.dark-theme .fullpage-esc-hint code {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* =========================================================
+   LIGHT THEME (When toggled)
+   ========================================================= */
+.notepad-workspace.light-theme {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.notepad-workspace.light-theme .notepad-toolbar {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.notepad-workspace.light-theme .notepad-editor textarea {
+  background: #ffffff;
+  color: #0f172a;
+  caret-color: #2563eb;
+}
+
+.notepad-workspace.light-theme .notepad-editor textarea::placeholder {
+  color: #94a3b8;
+}
+
+.notepad-workspace.light-theme .notepad-status {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.notepad-workspace.light-theme .toolbar-btn {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+.notepad-workspace.light-theme .toolbar-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.notepad-workspace.light-theme .toolbar-btn-danger:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.notepad-workspace.light-theme .toolbar-btn-fullpage {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.notepad-workspace.light-theme .toolbar-btn-fullpage:hover,
+.notepad-workspace.light-theme .toolbar-btn-fullpage.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.notepad-workspace.light-theme .theme-toggle-btn {
+  background: #1e293b;
+  color: #f8fafc;
+  font-weight: 700;
+  border-color: #0f172a;
+}
+
+.notepad-workspace.light-theme .theme-toggle-btn:hover {
+  background: #334155;
+}
+
+.notepad-workspace.light-theme .font-size-control {
+  color: #475569;
+}
+
+.notepad-workspace.light-theme .fullpage-esc-hint {
+  color: #64748b;
+}
+
+.notepad-workspace.light-theme .fullpage-esc-hint code {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* =========================================================
+   TOOLBAR & CONTROLS
+   ========================================================= */
+.notepad-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.toolbar-left, .toolbar-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.toolbar-btn-fullpage {
+  font-weight: 700;
+}
+
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.font-size-control input[type="range"] {
+  width: 80px;
+  accent-color: #2563eb;
+}
+
+.fullpage-esc-hint {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.fullpage-esc-hint code {
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   EDITOR TEXTAREA
+   ========================================================= */
+.notepad-editor {
+  width: 100%;
+}
+
+.notepad-editor textarea {
+  width: 100%;
+  min-height: 480px;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.75;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+.notepad-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.status-left, .status-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.save-indicator {
+  color: #10b981;
+  font-weight: 700;
+  animation: fadeIn 0.3s ease;
+}
+
+.auto-save-label {
+  font-style: italic;
+}
+
+.status-theme-label {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* SEO Content Below Notepad */
+.tool-seo-content {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.tool-seo-content h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.tool-seo-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.tool-seo-content p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.tool-seo-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tool-seo-content li {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.tool-seo-content a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tool-seo-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Desktop */
+@media (min-width: 768px) {
+  .notepad-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .notepad-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .notepad-editor textarea {
+    min-height: 560px;
+  }
+}

@@ -1,0 +1,68 @@
+/* AdBanner Styles - Tightly integrated ad slots */
+.ad-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.25rem auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Localhost & Testing Compact Ad Placement Box */
+.ad-preview-box {
+  width: 100%;
+  background: #f8fafc;
+  border: 2px dashed #93c5fd;
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  box-sizing: border-box;
+}
+
+.ad-preview-tag {
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ad-preview-title {
+  font-size: 0.95rem;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 600;
+}
+
+.ad-preview-info {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.ad-preview-info code {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* Slot Width Constraints */
+.ad-horizontal {
+  max-width: 728px;
+}
+
+.ad-rectangle {
+  max-width: 336px;
+}
+
+.ad-sidebar {
+  max-width: 300px;
+}
