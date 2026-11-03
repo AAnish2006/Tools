@@ -8,7 +8,7 @@ import './AdBanner.css';
  * - On localhost: Renders a compact placement card without the 300px empty ghost space that Google's script generates when ads cannot be served on localhost.
  */
 const AdBanner = ({ slot, format = 'auto', className = '' }) => {
-  const adClient = import.meta.env.VITE_ADSENSE_CLIENT || import.meta.env.VITE_ADMOB_CLIENT_ID || '';
+  const adClient = import.meta.env.VITE_ADSENSE_CLIENT || '';
   const [isLocalhost, setIsLocalhost] = useState(false);
 
   useEffect(() => {
