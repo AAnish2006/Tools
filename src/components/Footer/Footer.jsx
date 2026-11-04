@@ -33,6 +33,9 @@ const Footer = () => {
               <Link to="/tools/word-counter">Word Counter</Link>
               <Link to="/tools/json-formatter">JSON Formatter</Link>
               <Link to="/tools/image-resizer">Image Resizer</Link>
+              <Link to="/tools/password-generator">Password Generator</Link>
+              <Link to="/tools/base64-encoder">Base64 Encoder</Link>
+              <Link to="/tools/markdown-previewer">Markdown Previewer</Link>
             </nav>
           </div>
           <div className="footer-section">

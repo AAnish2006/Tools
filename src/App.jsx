@@ -10,6 +10,9 @@ import Notepad from './tools/Notepad/Notepad';
 import WordCounter from './tools/WordCounter/WordCounter';
 import JsonFormatter from './tools/JsonFormatter/JsonFormatter';
 import ImageResizer from './tools/ImageResizer/ImageResizer';
+import PasswordGenerator from './tools/PasswordGenerator/PasswordGenerator';
+import Base64Encoder from './tools/Base64Encoder/Base64Encoder';
+import MarkdownPreviewer from './tools/MarkdownPreviewer/MarkdownPreviewer';
 import './App.css';
 
 function App() {
@@ -22,7 +25,19 @@ function App() {
           <Route path="word-counter" element={<WordCounter />} />
           <Route path="json-formatter" element={<JsonFormatter />} />
           <Route path="image-resizer" element={<ImageResizer />} />
+          <Route path="password-generator" element={<PasswordGenerator />} />
+          <Route path="base64-encoder" element={<Base64Encoder />} />
+          <Route path="markdown-previewer" element={<MarkdownPreviewer />} />
         </Route>
+        {/* Direct Convenience Aliases */}
+        <Route path="notepad" element={<Notepad />} />
+        <Route path="word-counter" element={<WordCounter />} />
+        <Route path="json-formatter" element={<JsonFormatter />} />
+        <Route path="image-resizer" element={<ImageResizer />} />
+        <Route path="password-generator" element={<PasswordGenerator />} />
+        <Route path="base64-encoder" element={<Base64Encoder />} />
+        <Route path="markdown-previewer" element={<MarkdownPreviewer />} />
+
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<Blog />} />
         <Route path="about" element={<About />} />

@@ -76,6 +76,27 @@ const Home = () => {
       icon: '🖼️',
       link: '/tools/image-resizer',
       color: '#ec4899'
+    },
+    {
+      title: 'Password Generator',
+      desc: 'Generate cryptographically strong passwords and memorable passphrases with instant entropy analysis and customizable length.',
+      icon: '🔑',
+      link: '/tools/password-generator',
+      color: '#8b5cf6'
+    },
+    {
+      title: 'Base64 & URL Encoder',
+      desc: 'Encode and decode Base64 strings, URL parameters, and convert files to Base64 Data URIs with full UTF-8 & emoji support.',
+      icon: '📦',
+      link: '/tools/base64-encoder',
+      color: '#06b6d4'
+    },
+    {
+      title: 'Markdown Previewer',
+      desc: 'Draft documentation, READMEs, and blogs with live side-by-side Markdown to HTML preview, formatting toolbar, and instant export.',
+      icon: '📝',
+      link: '/tools/markdown-previewer',
+      color: '#14b8a6'
     }
   ];
 

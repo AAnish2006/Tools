@@ -1,0 +1,250 @@
+.base64-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.b64-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.b64-header h1 {
+  font-size: 2.25rem;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.b64-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.b64-workspace {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs */
+.b64-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+.b64-tab-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 0.6rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.b64-tab-btn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.b64-tab-btn.active {
+  color: #38bdf8;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+/* Dropzone */
+.b64-file-dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border: 2px dashed #475569;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.b64-file-dropzone:hover {
+  border-color: #38bdf8;
+  color: #f8fafc;
+}
+
+.drop-icon {
+  font-size: 1.3rem;
+}
+
+/* Error Banner */
+.b64-error-banner {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* Dual Editor Grid */
+.b64-editors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.b64-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.b64-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.b64-char-count {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.b64-textarea {
+  width: 100%;
+  height: 240px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #f8fafc;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.b64-textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+/* Actions Bar */
+.b64-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-top: 1px solid #334155;
+  padding-top: 1.25rem;
+}
+
+.b64-action-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.b64-btn {
+  padding: 0.65rem 1.15rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.b64-btn-primary {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.b64-btn-primary:hover {
+  background: #2563eb;
+}
+
+.b64-btn-secondary {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.b64-btn-secondary:hover {
+  background: #0369a1;
+}
+
+.b64-btn-swap {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.b64-btn-swap:hover {
+  background: #475569;
+}
+
+.b64-btn-copy {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.b64-btn-copy:hover {
+  background: #059669;
+}
+
+.b64-btn-copy.copied {
+  background: #16a34a;
+}
+
+.b64-btn-download {
+  background: #475569;
+  color: #f8fafc;
+}
+
+.b64-btn-download:hover {
+  background: #64748b;
+}
+
+.b64-btn-clear {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.b64-btn-clear:hover {
+  background: #dc2626;
+}
+
+.b64-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .b64-editors-grid {
+    grid-template-columns: 1fr;
+  }
+  .b64-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .b64-action-group {
+    justify-content: center;
+  }
+}

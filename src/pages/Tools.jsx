@@ -32,15 +32,36 @@ const ToolsIndex = () => {
       icon: '🖼️',
       link: '/tools/image-resizer',
       tags: ['Image', 'Design', 'Social Media']
+    },
+    {
+      title: 'Password Generator',
+      desc: 'Generate cryptographically strong passwords and memorable passphrases with instant entropy analysis and length customization.',
+      icon: '🔑',
+      link: '/tools/password-generator',
+      tags: ['Security', 'Privacy', 'Crypto']
+    },
+    {
+      title: 'Base64 & URL Encoder',
+      desc: 'Encode and decode Base64 strings, URL query parameters, and convert files to Base64 data URIs with full UTF-8 & emoji support.',
+      icon: '📦',
+      link: '/tools/base64-encoder',
+      tags: ['Developer', 'Web', 'Encoding']
+    },
+    {
+      title: 'Markdown Previewer',
+      desc: 'Live side-by-side Markdown to HTML editor and previewer with formatting toolbar, table support, and instant .md/.html export.',
+      icon: '📝',
+      link: '/tools/markdown-previewer',
+      tags: ['Markdown', 'Writing', 'Docs']
     }
   ];
 
   return (
     <div className="tools-page">
       <SEOHead
-        title="All Free Developer Tools — Notepad, Word Counter, JSON Formatter & Image Resizer"
-        description="Access free browser-based developer tools: Online Notepad with auto-save, Word Counter with social media limits, JSON Formatter & Validator, and Image Resizer. 100% private, no signup."
-        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, online utilities"
+        title="All Free Developer Tools — Notepad, Word Counter, JSON, Resizer, Passwords & Markdown"
+        description="Access free browser-based developer utilities: Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, and Markdown Previewer. 100% private."
+        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer"
         canonicalUrl="/tools"
       />
       <h1 className="tools-page-title">Free Online Developer Tools</h1>
