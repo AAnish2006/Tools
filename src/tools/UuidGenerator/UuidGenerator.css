@@ -1,0 +1,307 @@
+.uuid-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.uuid-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.uuid-header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.uuid-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.uuid-workspace {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs */
+.uuid-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+.uuid-tab-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 0.6rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.uuid-tab-btn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.uuid-tab-btn.active {
+  color: #38bdf8;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+/* Controls Panel */
+.uuid-controls-panel {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.uuid-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.uuid-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.uuid-control-group label {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.uuid-select {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.uuid-checkboxes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-top: 1px solid #334155;
+  padding-top: 1rem;
+}
+
+.uuid-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.uuid-checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #38bdf8;
+  cursor: pointer;
+}
+
+/* Results Display */
+.uuid-results-panel {
+  margin-bottom: 1.25rem;
+}
+
+.uuid-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.uuid-type-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.uuid-textarea {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #38bdf8;
+  font-family: monospace;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+/* Actions Bar */
+.uuid-actions-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.uuid-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.uuid-btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.uuid-btn-primary:hover {
+  background: #2563eb;
+}
+
+.uuid-btn-copy {
+  background: #10b981;
+  color: #fff;
+}
+
+.uuid-btn-copy:hover {
+  background: #059669;
+}
+
+.uuid-btn-copy.copied {
+  background: #16a34a;
+}
+
+.uuid-btn-download {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.uuid-btn-download:hover {
+  background: #475569;
+}
+
+/* Unix Timestamp Styles */
+.epoch-tools-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.epoch-live-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f172a;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.epoch-live-label {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.epoch-live-value {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.uuid-btn-small {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.epoch-converters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.epoch-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.epoch-card h3 {
+  color: #f8fafc;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.epoch-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.epoch-input-group label {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.epoch-input {
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  color: #f8fafc;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.epoch-result-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0.85rem;
+  color: #38bdf8;
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}

@@ -53,15 +53,29 @@ const ToolsIndex = () => {
       icon: '📝',
       link: '/tools/markdown-previewer',
       tags: ['Markdown', 'Writing', 'Docs']
+    },
+    {
+      title: 'UUID / GUID Generator',
+      desc: 'Generate RFC 4122 compliant UUID v4 identifiers in bulk, customizable hyphens/uppercase, and live Unix epoch timestamp converter.',
+      icon: '🆔',
+      link: '/tools/uuid-generator',
+      tags: ['Developer', 'UUID', 'Database']
+    },
+    {
+      title: 'Color Converter & Contrast',
+      desc: 'Convert HEX, RGB, and HSL colors, generate shades & tints, and audit WCAG 2.1 AA/AAA accessibility contrast compliance.',
+      icon: '🎨',
+      link: '/tools/color-converter',
+      tags: ['Design', 'CSS', 'Accessibility']
     }
   ];
 
   return (
     <div className="tools-page">
       <SEOHead
-        title="All Free Developer Tools — Notepad, Word Counter, JSON, Resizer, Passwords & Markdown"
-        description="Access free browser-based developer utilities: Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, and Markdown Previewer. 100% private."
-        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer"
+        title="All Free Developer Tools — Notepad, Word Counter, JSON, Passwords, UUID & Color"
+        description="Access free browser-based developer utilities: Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, Markdown Previewer, UUID Generator, and Color Contrast Checker."
+        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer, uuid generator, color converter"
         canonicalUrl="/tools"
       />
       <h1 className="tools-page-title">Free Online Developer Tools</h1>

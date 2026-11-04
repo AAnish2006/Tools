@@ -36,6 +36,8 @@ const Footer = () => {
               <Link to="/tools/password-generator">Password Generator</Link>
               <Link to="/tools/base64-encoder">Base64 Encoder</Link>
               <Link to="/tools/markdown-previewer">Markdown Previewer</Link>
+              <Link to="/tools/uuid-generator">UUID Generator</Link>
+              <Link to="/tools/color-converter">Color Converter</Link>
             </nav>
           </div>
           <div className="footer-section">

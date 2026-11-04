@@ -13,6 +13,8 @@ import ImageResizer from './tools/ImageResizer/ImageResizer';
 import PasswordGenerator from './tools/PasswordGenerator/PasswordGenerator';
 import Base64Encoder from './tools/Base64Encoder/Base64Encoder';
 import MarkdownPreviewer from './tools/MarkdownPreviewer/MarkdownPreviewer';
+import UuidGenerator from './tools/UuidGenerator/UuidGenerator';
+import ColorConverter from './tools/ColorConverter/ColorConverter';
 import './App.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path="password-generator" element={<PasswordGenerator />} />
           <Route path="base64-encoder" element={<Base64Encoder />} />
           <Route path="markdown-previewer" element={<MarkdownPreviewer />} />
+          <Route path="uuid-generator" element={<UuidGenerator />} />
+          <Route path="color-converter" element={<ColorConverter />} />
         </Route>
         {/* Direct Convenience Aliases */}
         <Route path="notepad" element={<Notepad />} />
@@ -37,6 +41,8 @@ function App() {
         <Route path="password-generator" element={<PasswordGenerator />} />
         <Route path="base64-encoder" element={<Base64Encoder />} />
         <Route path="markdown-previewer" element={<MarkdownPreviewer />} />
+        <Route path="uuid-generator" element={<UuidGenerator />} />
+        <Route path="color-converter" element={<ColorConverter />} />
 
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<Blog />} />

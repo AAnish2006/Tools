@@ -97,6 +97,20 @@ const Home = () => {
       icon: '📝',
       link: '/tools/markdown-previewer',
       color: '#14b8a6'
+    },
+    {
+      title: 'UUID / GUID Generator',
+      desc: 'Generate cryptographically random UUID v4 identifiers in bulk, customizable hyphens/uppercase, and live Unix timestamp converter.',
+      icon: '🆔',
+      link: '/tools/uuid-generator',
+      color: '#6366f1'
+    },
+    {
+      title: 'Color Converter & Contrast',
+      desc: 'Convert HEX, RGB, and HSL colors with one-click CSS copy, palette tints & shades, and WCAG 2.1 accessibility contrast audits.',
+      icon: '🎨',
+      link: '/tools/color-converter',
+      color: '#f43f5e'
     }
   ];
 
