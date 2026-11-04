@@ -29,6 +29,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-subtitle">Our Tools</h4>
             <nav className="footer-links">
+              <Link to="/tools/stopwatch">Online Stopwatch</Link>
               <Link to="/tools/notepad">Online Notepad</Link>
               <Link to="/tools/word-counter">Word Counter</Link>
               <Link to="/tools/json-formatter">JSON Formatter</Link>

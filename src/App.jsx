@@ -6,6 +6,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Stopwatch from './tools/Stopwatch/Stopwatch';
 import Notepad from './tools/Notepad/Notepad';
 import WordCounter from './tools/WordCounter/WordCounter';
 import JsonFormatter from './tools/JsonFormatter/JsonFormatter';
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="tools" element={<Tools />}>
+          <Route path="stopwatch" element={<Stopwatch />} />
           <Route path="notepad" element={<Notepad />} />
           <Route path="word-counter" element={<WordCounter />} />
           <Route path="json-formatter" element={<JsonFormatter />} />
@@ -34,6 +36,7 @@ function App() {
           <Route path="color-converter" element={<ColorConverter />} />
         </Route>
         {/* Direct Convenience Aliases */}
+        <Route path="stopwatch" element={<Stopwatch />} />
         <Route path="notepad" element={<Notepad />} />
         <Route path="word-counter" element={<WordCounter />} />
         <Route path="json-formatter" element={<JsonFormatter />} />

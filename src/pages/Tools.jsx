@@ -6,6 +6,13 @@ import './Tools.css';
 const ToolsIndex = () => {
   const tools = [
     {
+      title: 'Online Stopwatch & Timer',
+      desc: 'High-precision millisecond stopwatch with split lap tracking, countdown timer presets, audio alerts, and fullscreen mode.',
+      icon: '⏱️',
+      link: '/tools/stopwatch',
+      tags: ['Timer', 'Stopwatch', 'Productivity']
+    },
+    {
       title: 'Online Notepad',
       desc: 'Write and edit text instantly in your browser. Features auto-save, distraction-free mode, and easy copy-paste functionality.',
       icon: '📝',
@@ -73,9 +80,9 @@ const ToolsIndex = () => {
   return (
     <div className="tools-page">
       <SEOHead
-        title="All Free Developer Tools — Notepad, Word Counter, JSON, Passwords, UUID & Color"
-        description="Access free browser-based developer utilities: Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, Markdown Previewer, UUID Generator, and Color Contrast Checker."
-        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer, uuid generator, color converter"
+        title="All Free Developer Tools — Stopwatch, Notepad, Word Counter, JSON, Passwords & Color"
+        description="Access free browser-based developer utilities: Online Stopwatch & Timer, Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, Markdown Previewer, UUID Generator, and Color Contrast Checker."
+        keywords="free online tools, online stopwatch, countdown timer, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer, uuid generator, color converter"
         canonicalUrl="/tools"
       />
       <h1 className="tools-page-title">Free Online Developer Tools</h1>

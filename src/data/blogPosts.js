@@ -241,31 +241,34 @@ Format, validate, and minify your data securely with our browser-based [Free JSO
 
 Every modern engineer relies on lightweight browser tools to handle daily formatting, drafting, data inspection, and security tasks without loading heavyweight IDE workspaces.
 
-### 1. In-Browser Scratchpad & Text Editor
+### 1. High-Precision Online Stopwatch & Countdown Timer
+Track sprint milestones, Pomodoro focus blocks, and benchmark code execution intervals down to the millisecond with our [Online Stopwatch & Countdown Timer](/tools/stopwatch) featuring split lap tracking and audio alerts.
+
+### 2. In-Browser Scratchpad & Text Editor
 A distraction-free [Online Notepad](/tools/notepad) provides an instant staging ground for code fragments, git commit drafting, and temporary clipboard buffers with continuous auto-save and dark theme.
 
-### 2. Live Word & Text Metrics Engine
+### 3. Live Word & Text Metrics Engine
 Content engineers and technical writers rely on our [Word Counter](/tools/word-counter) to audit README guidelines, character constraints for social media platforms, SEO metadata, and API documentation length.
 
-### 3. Client-Side JSON Formatter & Debugger
+### 4. Client-Side JSON Formatter & Debugger
 Parsing REST and GraphQL responses is simplified with our [JSON Formatter & Validator](/tools/json-formatter), ensuring fast visual beautification, syntax validation, and minification of nested payloads.
 
-### 4. Base64 & URL Encoding Tools
+### 5. Base64 & URL Encoding Tools
 Decode authentication tokens, query string parameters, and convert files into Data URIs instantly using our [Base64 & URL Encoder](/tools/base64-encoder) with full UTF-8 emoji support.
 
-### 5. Cryptographic Password & Passphrase Generator
+### 6. Cryptographic Password & Passphrase Generator
 Generate uncrackable, cryptographically random credentials and memorable Diceware passphrases with entropy analysis using our [Strong Password Generator](/tools/password-generator).
 
-### 6. Markdown to HTML Live Editor & Previewer
+### 7. Markdown to HTML Live Editor & Previewer
 Draft GitHub README files, technical documentation, and blog posts with instantaneous side-by-side rendering, table shortcuts, and full-page mode using our [Markdown Previewer](/tools/markdown-previewer).
 
-### 7. HTML5 Canvas Image Resizer
+### 8. HTML5 Canvas Image Resizer
 Resize banners, screenshots, and social graphics directly on your device with aspect ratio lock and modern WEBP compression via our [Image Resizer](/tools/image-resizer).
 
-### 8. RFC 4122 UUID v4 Generator & Unix Timestamp Converter
+### 9. RFC 4122 UUID v4 Generator & Unix Timestamp Converter
 Generate cryptographically random UUIDs in bulk and convert Unix epoch timestamps to human-readable dates with our [UUID Generator](/tools/uuid-generator).
 
-### 9. Color Converter & WCAG 2.1 Contrast Checker
+### 10. Color Converter & WCAG 2.1 Contrast Checker
 Convert between HEX, RGB, and HSL formats, generate shades and tints, and audit accessibility contrast ratios with our [Color Converter](/tools/color-converter).
 
 ## Why Browser-First Tools Are Winning

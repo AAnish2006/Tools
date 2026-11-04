@@ -50,6 +50,13 @@ const Home = () => {
 
   const tools = [
     {
+      title: 'Online Stopwatch & Timer',
+      desc: 'High-precision millisecond stopwatch with split lap tracking, countdown timer presets, audio chime alarm, and fullscreen view.',
+      icon: '⏱️',
+      link: '/tools/stopwatch',
+      color: '#0284c7'
+    },
+    {
       title: 'Online Notepad',
       desc: 'A fast, distraction-free online text editor. Write notes, code snippets, and drafts instantly in your browser with default dark mode, auto-save, and full page expansion.',
       icon: '📝',
