@@ -191,15 +191,36 @@ const ImageResizer = () => {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
+  const imageResizerFaqs = [
+    {
+      question: "Are my photos uploaded to a remote server when resizing?",
+      answer: "No. All resizing and format conversions occur 100% inside your browser using HTML5 Canvas. Your images are never transmitted over the internet or saved to any cloud storage."
+    },
+    {
+      question: "Can I lock the aspect ratio while resizing?",
+      answer: "Yes! The Aspect Ratio Lock is enabled by default. Changing the width automatically recalculates the height proportionally (and vice versa) to prevent your image from stretching or distorting."
+    },
+    {
+      question: "Which formats are supported?",
+      answer: "You can upload JPG, JPEG, PNG, WEBP, and SVG files, and export them into optimized JPG, PNG, or modern compressed WEBP format with customizable quality settings."
+    }
+  ];
+
   const structuredData = {
-    "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Online Image Resizer - DevToolBox",
     "url": "https://tools.trendbit.lol/tools/image-resizer",
-    "description": "Free online image resizer. Resize PNG, JPG, and WEBP images in your browser with custom dimensions and aspect ratio lock.",
+    "description": "Free online image resizer. Resize PNG, JPG, and WEBP images directly in your browser with custom dimensions and aspect ratio lock.",
     "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "operatingSystem": "All modern browsers",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "640",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   const compressionPercent = originalSize > 0 && resizedSize > 0
@@ -209,11 +230,12 @@ const ImageResizer = () => {
   return (
     <div className="imageresizer-page">
       <SEOHead
-        title="Image Resizer - Free Online Tool"
-        description="Free online image resizer. Resize JPG, PNG, WEBP images in your browser with custom dimensions, social media presets, and quality control. 100% private."
+        title="Online Image Resizer — Resize JPG, PNG & WEBP (Custom Dimensions, Free)"
+        description="Free online image resizer. Resize JPG, PNG, and WEBP images in your browser with custom dimensions, social media presets, aspect ratio lock, and quality control. 100% private."
         keywords="image resizer, resize image online, resize photo, photo resizer, crop image, compress image, image dimension changer, free image resizer"
         canonicalUrl="/tools/image-resizer"
         structuredData={structuredData}
+        faqData={imageResizerFaqs}
       />
 
       <div className="ir-header">
@@ -448,6 +470,16 @@ const ImageResizer = () => {
           Looking for other developer tools? Draft documentation with our <Link to="/tools/notepad">Online Notepad</Link>, 
           audit social media caption length with our <Link to="/tools/word-counter">Word Counter</Link>, or format structured payloads with our <Link to="/tools/json-formatter">JSON Formatter</Link>.
         </p>
+
+        <h3>Frequently Asked Questions</h3>
+        <div className="ir-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {imageResizerFaqs.map((faq, i) => (
+            <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
+              <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
+              <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

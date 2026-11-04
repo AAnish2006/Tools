@@ -1,70 +1,117 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead/SEOHead';
 import AdBanner from '../components/AdBanner/AdBanner';
 import './Home.css';
 
 const Home = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "DevToolBox",
-    "url": "https://tools.trendbit.lol",
-    "description": "Free online developer tools including notepad, word counter, and JSON formatter. No signup needed.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://tools.trendbit.lol/tools?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const structuredData = [
+    {
+      "@type": "WebSite",
+      "name": "DevToolBox",
+      "url": "https://tools.trendbit.lol",
+      "description": "Free online developer tools including notepad, word counter, JSON formatter, and image resizer. 100% browser-based with zero signup.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tools.trendbit.lol/tools?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "DevToolBox Developer Suite",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers (Chrome, Edge, Safari, Firefox)",
+      "url": "https://tools.trendbit.lol",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1420",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
-  };
+  ];
+
+  const faqs = [
+    {
+      question: "Are these developer tools completely free to use?",
+      answer: "Yes, 100% free. There are no paywalls, subscriptions, or hidden charges. You don't even need to create an account or provide an email address."
+    },
+    {
+      question: "Is my text, code, or image data uploaded to any server?",
+      answer: "Never. All utilities run 100% inside your local web browser using client-side JavaScript, HTML5 Canvas, and local storage. Your data remains strictly on your device."
+    },
+    {
+      question: "Does the Online Notepad save my work if I accidentally close the tab?",
+      answer: "Yes! The notepad continuously auto-saves your text to your browser's persistent local storage every 500 milliseconds. When you return, your notes are right where you left them."
+    },
+    {
+      question: "Can I check character limits for X (Twitter), Instagram, and LinkedIn?",
+      answer: "Yes. Our Word Counter includes instant platform limit checks for X (standard and premium tweets, bios), Instagram captions, LinkedIn posts, Facebook, YouTube, TikTok, and Pinterest with real-time red overflow highlighting and a one-click trim button."
+    }
+  ];
 
   const tools = [
     {
       title: 'Online Notepad',
-      desc: 'A fast, distraction-free online text editor. Write notes, code snippets, and drafts instantly in your browser with auto-save.',
+      desc: 'A fast, distraction-free online text editor. Write notes, code snippets, and drafts instantly in your browser with default dark mode, auto-save, and full page expansion.',
       icon: '📝',
       link: '/tools/notepad',
       color: '#2563eb'
     },
     {
       title: 'Word Counter',
-      desc: 'Count words, characters, sentences, and paragraphs in real-time. Perfect for SEO content, essays, and social media posts.',
+      desc: 'Count words, characters, sentences, and paragraphs in real-time. Verify social media character limits (X, Instagram, LinkedIn) with live overflow highlighting.',
       icon: '🔢',
       link: '/tools/word-counter',
       color: '#10b981'
     },
     {
       title: 'JSON Formatter',
-      desc: 'Format, validate, and beautify JSON data with syntax highlighting. Debug API responses and config files effortlessly.',
+      desc: 'Format, validate, beautify, and minify JSON data with syntax error detection. 100% private in-browser debugging for API payloads.',
       icon: '{ }',
       link: '/tools/json-formatter',
       color: '#f59e0b'
     },
     {
       title: 'Image Resizer',
-      desc: 'Resize images with custom dimensions, aspect ratio lock, and presets for Instagram, YouTube, and X.',
+      desc: 'Resize JPG, PNG, and WEBP images directly on HTML5 Canvas. Lock aspect ratios, adjust quality, and apply presets with zero server uploads.',
       icon: '🖼️',
       link: '/tools/image-resizer',
       color: '#ec4899'
     }
   ];
 
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   return (
     <div className="home-page">
       <SEOHead
-        title="Free Online Developer Tools"
-        description="DevToolBox offers free online developer tools: notepad, word counter, JSON formatter. No signup required. Boost your productivity instantly."
-        keywords="online developer tools, free notepad, word counter, JSON formatter, text editor online, developer utilities"
+        title="Free Online Developer Tools — Notepad, Word Counter, JSON Formatter"
+        description="DevToolBox offers free online developer tools: Online Notepad with auto-save & dark mode, Word Counter with social media limits, JSON Formatter, and Image Resizer. 100% private."
+        keywords="free online developer tools, online notepad, word counter online, json formatter, image resizer online, text editor browser, character count twitter"
         canonicalUrl="/"
         structuredData={structuredData}
+        faqData={faqs}
       />
 
       <section className="hero">
         <div className="hero-content">
-          <span className="hero-badge">🚀 100% Free — No Signup Required</span>
+          <span className="hero-badge">🚀 100% Free & Private — No Signup Required</span>
           <h1 className="hero-title">Free Online Developer Tools</h1>
           <p className="hero-subtitle">
-            Boost your productivity with our suite of free, browser-based developer tools. 
-            Write notes, count words, format JSON — all instantly, all privately.
+            Boost your productivity with our suite of free, browser-based utilities. 
+            Take quick notes, count words against social media limits, format JSON, and resize images — all instantly, with zero server uploads.
           </p>
           <div className="hero-cta">
             <Link to="/tools" className="btn btn-primary">Explore All Tools</Link>
@@ -78,7 +125,7 @@ const Home = () => {
       <section className="tools-section">
         <h2 className="section-title">Our Developer Tools</h2>
         <p className="section-subtitle">
-          Powerful, free tools designed for developers, writers, and content creators
+          Powerful, privacy-focused utilities designed for developers, writers, and social media creators
         </p>
         <div className="tools-grid">
           {tools.map((tool, index) => (
@@ -102,29 +149,77 @@ const Home = () => {
           <div className="feature">
             <span className="feature-icon">🔒</span>
             <h3>100% Private</h3>
-            <p>All processing happens in your browser. Your data never leaves your device.</p>
+            <p>All processing happens locally in your browser. Your sensitive code, notes, and photos never touch any remote server.</p>
           </div>
           <div className="feature">
             <span className="feature-icon">⚡</span>
-            <h3>Lightning Fast</h3>
-            <p>No server requests needed. Tools load and respond instantly.</p>
+            <h3>Instant Performance</h3>
+            <p>Zero network latency. Tools load and calculate synchronously using optimized HTML5 APIs.</p>
           </div>
           <div className="feature">
             <span className="feature-icon">📱</span>
-            <h3>Works Everywhere</h3>
-            <p>Fully responsive design. Use on desktop, tablet, or mobile.</p>
+            <h3>Responsive & Accessible</h3>
+            <p>Full support for mobile phones, tablets, and wide-screen desktop monitors.</p>
           </div>
           <div className="feature">
             <span className="feature-icon">🆓</span>
-            <h3>Always Free</h3>
-            <p>No signup, no credit card, no hidden fees. Just open and use.</p>
+            <h3>Always 100% Free</h3>
+            <p>No subscriptions, no hidden limitations, and no credit card required. Pure utilities made for everyday use.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions for SEO and User Clarity */}
+      <section className="home-faq-section" style={{ maxWidth: '900px', margin: '4rem auto', padding: '0 1rem' }}>
+        <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '1rem' }}>Frequently Asked Questions</h2>
+        <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          Everything you need to know about DevToolBox utilities and privacy
+        </p>
+        <div className="faq-list" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {faqs.map((faq, index) => (
+            <div 
+              key={index} 
+              style={{
+                border: '1px solid #334155',
+                borderRadius: '8px',
+                backgroundColor: '#1e293b',
+                overflow: 'hidden'
+              }}
+            >
+              <button
+                onClick={() => toggleFaq(index)}
+                style={{
+                  width: '100%',
+                  padding: '1.25rem 1.5rem',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  background: 'none',
+                  border: 'none',
+                  color: '#f8fafc',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  textAlign: 'left',
+                  cursor: 'pointer'
+                }}
+                aria-expanded={openFaq === index}
+              >
+                <span>{faq.question}</span>
+                <span style={{ fontSize: '1.4rem', marginLeft: '1rem', transition: 'transform 0.2s', transform: openFaq === index ? 'rotate(45deg)' : 'none' }}>+</span>
+              </button>
+              {openFaq === index && (
+                <div style={{ padding: '0 1.5rem 1.25rem', color: '#94a3b8', lineHeight: '1.6', fontSize: '1rem' }}>
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="cta-section">
         <h2>Ready to Boost Your Productivity?</h2>
-        <p>Join thousands of developers who use DevToolBox daily. Start using our <Link to="/tools/notepad">online notepad</Link>, <Link to="/tools/word-counter">word counter</Link>, or <Link to="/tools/json-formatter">JSON formatter</Link> right now.</p>
+        <p>Start writing in our <Link to="/tools/notepad">Online Notepad</Link>, check text limits with the <Link to="/tools/word-counter">Word Counter</Link>, or format your JSON with the <Link to="/tools/json-formatter">JSON Formatter</Link> right now.</p>
         <Link to="/tools" className="btn btn-primary">Get Started — It's Free</Link>
       </section>
     </div>

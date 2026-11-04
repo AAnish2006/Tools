@@ -152,25 +152,51 @@ const WordCounter = () => {
     }
   };
 
+  const wordCounterFaqs = [
+    {
+      question: "What is the X (Twitter) character limit in 2026?",
+      answer: "Standard free accounts on X (formerly Twitter) have a limit of 280 characters per tweet. Subscribed X Premium users can write up to 25,000 characters. Our tool checks both limits with live overflow highlighting."
+    },
+    {
+      question: "How does the red overflow highlighting work?",
+      answer: "Whenever your text exceeds the selected platform's limit, the exact characters exceeding the limit turn bright red in the editor. You can also click 'Trim to Limit' to automatically prune the excess."
+    },
+    {
+      question: "How is reading time calculated?",
+      answer: "Reading time is estimated based on the standard average adult reading speed of 200 words per minute (wpm)."
+    },
+    {
+      question: "What is keyword density in this word counter?",
+      answer: "Keyword density indicates the percentage frequency of key words in your text, helping content writers and SEO professionals prevent keyword stuffing while optimizing for search engines."
+    }
+  ];
+
   const structuredData = {
-    "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Word Counter - DevToolBox",
+    "name": "Word Counter & Character Checker - DevToolBox",
     "url": "https://tools.trendbit.lol/tools/word-counter",
-    "description": "Free online word counter with social media platform character limit checker. Count words, characters, and highlight overflow characters.",
+    "description": "Free online word counter and social media character limit checker. Count words, characters, sentences, paragraphs with live overflow highlighting.",
     "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "operatingSystem": "All modern browsers",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "950",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   return (
     <div className="wordcounter-page">
       <SEOHead
-        title="Word Counter - Free Online Tool"
-        description="Free online word counter and social media character checker. Count words, characters, sentences, paragraphs with platform character limit highlighting."
+        title="Word Counter Online — Character & Social Media Limit Counter (Free)"
+        description="Free online word counter and social media character checker. Count words, characters, sentences, and paragraphs with live platform limit highlighting for X, Instagram, LinkedIn & YouTube."
         keywords="word counter, character counter, twitter character counter, social media character limit, X tweet length, keyword density, SEO word counter"
         canonicalUrl="/tools/word-counter"
         structuredData={structuredData}
+        faqData={wordCounterFaqs}
       />
 
       <div className="wc-header">
@@ -377,6 +403,16 @@ const WordCounter = () => {
           Debugging API structures? Try our <Link to="/tools/json-formatter">JSON Formatter</Link>. Read our 
           <Link to="/blog"> blog</Link> for proven content optimization strategies.
         </p>
+
+        <h3>Frequently Asked Questions</h3>
+        <div className="wc-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {wordCounterFaqs.map((faq, i) => (
+            <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
+              <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
+              <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

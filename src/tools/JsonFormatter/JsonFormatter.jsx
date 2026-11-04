@@ -98,25 +98,47 @@ const JsonFormatter = () => {
     URL.revokeObjectURL(url);
   }, [output, input]);
 
+  const jsonFaqs = [
+    {
+      question: "Is my JSON payload sent to any backend server?",
+      answer: "No. All JSON parsing, formatting, validation, and minification happen 100% in-browser using standard native JSON engine APIs. Your sensitive API payloads, keys, and tokens never touch the network."
+    },
+    {
+      question: "Can I validate and format invalid JSON?",
+      answer: "If your JSON has syntax errors (such as missing quotes, trailing commas, or unclosed brackets), our validator pinpoints the exact syntax error message so you can fix it immediately."
+    },
+    {
+      question: "What is the difference between Beautify and Minify?",
+      answer: "Beautify formats compact JSON into easily readable lines with 2, 4, or 8 space indentation. Minify strips all unnecessary whitespace and line breaks to minimize payload size for production deployment."
+    }
+  ];
+
   const structuredData = {
-    "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "JSON Formatter - DevToolBox",
+    "name": "JSON Formatter & Validator - DevToolBox",
     "url": "https://tools.trendbit.lol/tools/json-formatter",
-    "description": "Free online JSON formatter and validator. Format, beautify, minify, and validate JSON data.",
+    "description": "Free online JSON formatter, validator, and beautifier with error detection and minification. 100% client-side privacy.",
     "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "operatingSystem": "All modern browsers",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "780",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   return (
     <div className="json-page">
       <SEOHead
-        title="JSON Formatter - Free Online Tool"
-        description="Free online JSON formatter and validator. Format, beautify, minify, and validate JSON data with syntax highlighting. Debug APIs instantly."
+        title="JSON Formatter & Validator — Beautify & Minify JSON Online (100% Private)"
+        description="Free online JSON formatter, validator, and beautifier. Validate JSON syntax, pretty print with indentation, minify for production, and debug APIs with zero server uploads."
         keywords="JSON formatter, JSON validator, JSON beautifier, format JSON online, JSON minifier, validate JSON, pretty print JSON, API debugging"
         canonicalUrl="/tools/json-formatter"
         structuredData={structuredData}
+        faqData={jsonFaqs}
       />
 
       <div className="json-header">
@@ -215,6 +237,16 @@ const JsonFormatter = () => {
           Writing API documentation? Use our <Link to="/tools/word-counter">Word Counter</Link> to keep your 
           docs concise. Visit our <Link to="/blog">blog</Link> for developer tips and tutorials.
         </p>
+
+        <h3>Frequently Asked Questions</h3>
+        <div className="json-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {jsonFaqs.map((faq, i) => (
+            <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
+              <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
+              <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

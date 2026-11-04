@@ -6,26 +6,57 @@ const SEOHead = ({
   keywords, 
   canonicalUrl,
   ogType = 'website',
-  ogImage = '/og-image.png',
-  structuredData
+  ogImage = '/favicon.svg',
+  structuredData,
+  faqData
 }) => {
   const siteTitle = 'DevToolBox';
   const fullTitle = title ? `${title} | ${siteTitle}` : `${siteTitle} - Free Online Developer Tools`;
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://tools.trendbit.lol';
+  const canonicalFull = canonicalUrl ? `${siteUrl}${canonicalUrl}` : `${siteUrl}/`;
+
+  // Build JSON-LD structured data graph
+  const jsonLdGraph = [];
+
+  if (structuredData) {
+    if (Array.isArray(structuredData)) {
+      jsonLdGraph.push(...structuredData);
+    } else {
+      jsonLdGraph.push(structuredData);
+    }
+  }
+
+  if (faqData && Array.isArray(faqData) && faqData.length > 0) {
+    jsonLdGraph.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    });
+  }
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       
-      {/* Open Graph */}
+      {/* Canonical */}
+      <link rel="canonical" href={canonicalFull} />
+
+      {/* Open Graph / Facebook */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-      {canonicalUrl && <meta property="og:url" content={`${siteUrl}${canonicalUrl}`} />}
+      <meta property="og:url" content={canonicalFull} />
       <meta property="og:site_name" content={siteTitle} />
       
       {/* Twitter Card */}
@@ -34,13 +65,13 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
       
-      {/* Canonical */}
-      {canonicalUrl && <link rel="canonical" href={`${siteUrl}${canonicalUrl}`} />}
-      
-      {/* Structured Data */}
-      {structuredData && (
+      {/* Structured Data (Schema.org) */}
+      {jsonLdGraph.length > 0 && (
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": jsonLdGraph
+          })}
         </script>
       )}
     </Helmet>

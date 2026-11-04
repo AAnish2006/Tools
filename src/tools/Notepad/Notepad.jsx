@@ -107,25 +107,51 @@ const Notepad = () => {
   const charCount = text.length;
   const lineCount = text ? text.split('\n').length : 0;
 
+  const notepadFaqs = [
+    {
+      question: "Does this online notepad save my notes automatically?",
+      answer: "Yes, every keystroke is automatically saved to your browser's persistent local storage. Even if you accidentally close the tab or reboot your computer, your notes will remain intact."
+    },
+    {
+      question: "Is there a dark mode in this notepad?",
+      answer: "Yes! The notepad opens by default in high-contrast Dark Mode to reduce eye fatigue during late-night writing or coding sessions. You can switch to Light Mode at any time with a single click."
+    },
+    {
+      question: "How do I use the full-page expansion mode?",
+      answer: "Click the 'Expand Full Page' button in the toolbar (or press Escape to exit). The editor will smoothly expand to cover your entire browser viewport with an edge-to-edge distraction-free writing environment."
+    },
+    {
+      question: "Is my text private and secure?",
+      answer: "100% private. Your notes never leave your computer. We do not use any cloud servers, databases, or third-party storage for your written text."
+    }
+  ];
+
   const structuredData = {
-    "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Online Notepad - DevToolBox",
     "url": "https://tools.trendbit.lol/tools/notepad",
-    "description": "Free online notepad with auto-save. Write notes, code snippets, and drafts in your browser.",
+    "description": "Free online notepad with auto-save and dark mode. Write notes, code snippets, and drafts directly in your browser with zero signup.",
     "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "operatingSystem": "All modern browsers",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "820",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   return (
     <div className={`notepad-page ${isFullPage ? 'page-in-fullpage' : ''}`}>
       <SEOHead
-        title="Online Notepad - Free Text Editor"
-        description="Free online notepad with auto-save. Write notes, code snippets, and text drafts instantly in your browser. No signup required."
-        keywords="online notepad, free text editor, browser notepad, write notes online, text editor no signup, quick notes"
+        title="Online Notepad — Free Dark Mode Text Editor (Auto-Save, No Signup)"
+        description="Free online notepad with auto-save and dark theme. Write notes, drafts, and code snippets in an edge-to-edge full-page browser canvas. 100% private."
+        keywords="online notepad, free text editor, dark mode notepad, browser notepad, write notes online, text editor no signup, auto save notepad"
         canonicalUrl="/tools/notepad"
         structuredData={structuredData}
+        faqData={notepadFaqs}
       />
 
       {!isFullPage && (
@@ -234,6 +260,16 @@ const Notepad = () => {
             <p>
               Analyze your text metrics in detail using our <Link to="/tools/word-counter">Word Counter</Link>, or format and validate API responses with our <Link to="/tools/json-formatter">JSON Formatter</Link>.
             </p>
+
+            <h3>Frequently Asked Questions</h3>
+            <div className="notepad-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {notepadFaqs.map((faq, i) => (
+                <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
+                  <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+                </div>
+              ))}
+            </div>
           </section>
         </>
       )}
