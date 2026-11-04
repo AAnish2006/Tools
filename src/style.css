@@ -75,3 +75,57 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   border: 0;
 }
+
+/* Global SEO Content Block Styling */
+.tool-seo-content {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tool-seo-content h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.tool-seo-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.tool-seo-content p {
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.tool-seo-content ul, .tool-seo-content ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tool-seo-content li {
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.tool-seo-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.tool-seo-content a:hover {
+  color: #1d4ed8;
+}
+
