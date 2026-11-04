@@ -11,12 +11,24 @@ const SEOHead = ({
   faqData
 }) => {
   const siteTitle = 'DevToolBox';
-  const fullTitle = title ? `${title} | ${siteTitle}` : `${siteTitle} - Free Online Developer Tools`;
+  const fullTitle = !title
+    ? `${siteTitle} — Online Notepad, Word Counter, JSON Formatter & Image Resizer`
+    : title.includes(siteTitle)
+      ? title
+      : `${title} | ${siteTitle}`;
+
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://tools.trendbit.lol';
   const canonicalFull = canonicalUrl ? `${siteUrl}${canonicalUrl}` : `${siteUrl}/`;
 
-  // Build JSON-LD structured data graph
-  const jsonLdGraph = [];
+  // Build JSON-LD structured data graph with official Google Site Name schema
+  const jsonLdGraph = [
+    {
+      "@type": "WebSite",
+      "name": "DevToolBox",
+      "alternateName": ["DevToolBox Tools", "DevToolBox Online", "DevToolBox Suite"],
+      "url": "https://tools.trendbit.lol/"
+    }
+  ];
 
   if (structuredData) {
     if (Array.isArray(structuredData)) {
@@ -28,7 +40,6 @@ const SEOHead = ({
 
   if (faqData && Array.isArray(faqData) && faqData.length > 0) {
     jsonLdGraph.push({
-      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": faqData.map(item => ({
         "@type": "Question",
@@ -48,6 +59,10 @@ const SEOHead = ({
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       
+      {/* Official Google Search Site Name Directives */}
+      <meta name="application-name" content="DevToolBox" />
+      <meta name="apple-mobile-web-app-title" content="DevToolBox" />
+
       {/* Canonical */}
       <link rel="canonical" href={canonicalFull} />
 
@@ -57,7 +72,7 @@ const SEOHead = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:url" content={canonicalFull} />
-      <meta property="og:site_name" content={siteTitle} />
+      <meta property="og:site_name" content="DevToolBox" />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -66,14 +81,12 @@ const SEOHead = ({
       <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
       
       {/* Structured Data (Schema.org) */}
-      {jsonLdGraph.length > 0 && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": jsonLdGraph
-          })}
-        </script>
-      )}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": jsonLdGraph
+        })}
+      </script>
     </Helmet>
   );
 };

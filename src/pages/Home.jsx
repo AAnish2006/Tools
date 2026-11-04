@@ -9,17 +9,6 @@ const Home = () => {
 
   const structuredData = [
     {
-      "@type": "WebSite",
-      "name": "DevToolBox",
-      "url": "https://tools.trendbit.lol",
-      "description": "Free online developer tools including notepad, word counter, JSON formatter, and image resizer. 100% browser-based with zero signup.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tools.trendbit.lol/tools?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
       "@type": "SoftwareApplication",
       "name": "DevToolBox Developer Suite",
       "applicationCategory": "DeveloperApplication",
@@ -97,9 +86,9 @@ const Home = () => {
   return (
     <div className="home-page">
       <SEOHead
-        title="Free Online Developer Tools — Notepad, Word Counter, JSON Formatter"
-        description="DevToolBox offers free online developer tools: Online Notepad with auto-save & dark mode, Word Counter with social media limits, JSON Formatter, and Image Resizer. 100% private."
-        keywords="free online developer tools, online notepad, word counter online, json formatter, image resizer online, text editor browser, character count twitter"
+        title="DevToolBox — Online Notepad, Word Counter, JSON Formatter & Image Resizer"
+        description="DevToolBox offers 100% free browser tools: Online Notepad with auto-save & dark mode, Word Counter with social media limits, JSON Formatter & Validator, and Image Resizer. 100% private with no signup required."
+        keywords="DevToolBox, free online developer tools, online notepad, word counter online, json formatter, image resizer online, text editor browser, character count twitter"
         canonicalUrl="/"
         structuredData={structuredData}
         faqData={faqs}

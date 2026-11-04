@@ -38,9 +38,9 @@ const ToolsIndex = () => {
   return (
     <div className="tools-page">
       <SEOHead
-        title="Free Online Tools"
-        description="Access free online developer tools: notepad, word counter, JSON formatter. No installation or signup required. Works in your browser."
-        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, online utilities"
+        title="All Free Developer Tools — Notepad, Word Counter, JSON Formatter & Image Resizer"
+        description="Access free browser-based developer tools: Online Notepad with auto-save, Word Counter with social media limits, JSON Formatter & Validator, and Image Resizer. 100% private, no signup."
+        keywords="free online tools, developer tools, text editor, word counter, JSON formatter, image resizer, online utilities"
         canonicalUrl="/tools"
       />
       <h1 className="tools-page-title">Free Online Developer Tools</h1>
