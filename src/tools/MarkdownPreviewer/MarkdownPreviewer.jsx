@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead/SEOHead';
 import AdBanner from '../../components/AdBanner/AdBanner';
@@ -140,7 +140,31 @@ const MarkdownPreviewer = () => {
   const [markdown, setMarkdown] = useState(SAMPLE_MARKDOWN);
   const [viewMode, setViewMode] = useState('preview'); // 'preview' or 'html'
   const [copied, setCopied] = useState(false);
+  const [isFullPage, setIsFullPage] = useState(false);
   const textareaRef = useRef(null);
+
+  // Handle escape key to exit full page mode
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isFullPage) {
+        setIsFullPage(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullPage]);
+
+  // Lock body scroll when in full page mode
+  useEffect(() => {
+    if (isFullPage) {
+      document.body.classList.add('md-fullpage-open');
+    } else {
+      document.body.classList.remove('md-fullpage-open');
+    }
+    return () => {
+      document.body.classList.remove('md-fullpage-open');
+    };
+  }, [isFullPage]);
 
   const compiledHtml = useMemo(() => {
     return parseMarkdownToHTML(markdown);
@@ -243,7 +267,7 @@ const MarkdownPreviewer = () => {
   };
 
   return (
-    <div className="markdown-page">
+    <div className={`markdown-page ${isFullPage ? 'page-in-fullpage' : ''}`}>
       <SEOHead
         title="Markdown to HTML Live Preview & Editor — Free Online Markdown Tool"
         description="Free online Markdown editor and live HTML previewer. Side-by-side editing, syntax formatting toolbar, table support, and one-click HTML/MD export. 100% private."
@@ -253,14 +277,16 @@ const MarkdownPreviewer = () => {
         faqData={faqs}
       />
 
-      <div className="md-header">
-        <h1>Markdown to HTML Live Preview & Editor</h1>
-        <p className="md-subtitle">
-          Draft documentation, READMEs, and blog posts with live side-by-side HTML preview. One-click formatting, table support, and instant export.
-        </p>
-      </div>
+      {!isFullPage && (
+        <div className="md-header">
+          <h1>Markdown to HTML Live Preview & Editor</h1>
+          <p className="md-subtitle">
+            Draft documentation, READMEs, and blog posts with live side-by-side HTML preview. One-click formatting, table support, and instant export.
+          </p>
+        </div>
+      )}
 
-      <div className="md-workspace">
+      <div className={`md-workspace ${isFullPage ? 'fullpage-active' : ''}`}>
         {/* Quick Formatting Toolbar */}
         <div className="md-toolbar">
           <div className="md-tools-left">
@@ -305,6 +331,13 @@ const MarkdownPreviewer = () => {
           </div>
 
           <div className="md-tools-right">
+            <button
+              className={`md-tool-btn md-btn-fullscreen ${isFullPage ? 'active' : ''}`}
+              onClick={() => setIsFullPage(!isFullPage)}
+              title={isFullPage ? 'Exit Full Page (Esc)' : 'Expand to Full Page'}
+            >
+              {isFullPage ? '🗗 Exit Full Page' : '⛶ Full Page'}
+            </button>
             <button className="md-tool-btn md-btn-sample" onClick={() => setMarkdown(SAMPLE_MARKDOWN)}>
               📄 Load Sample
             </button>
@@ -385,39 +418,43 @@ const MarkdownPreviewer = () => {
         </div>
       </div>
 
-      <AdBanner slot="markdown-bottom" format="horizontal" />
+      {!isFullPage && (
+        <>
+          <AdBanner slot="markdown-bottom" format="horizontal" />
 
-      {/* SEO & Technical Content */}
-      <section className="tool-seo-content">
-        <h2>About Our Free Markdown to HTML Live Editor & Previewer</h2>
-        <p>
-          The DevToolBox <strong>Markdown Live Editor</strong> is a responsive browser tool engineered for writers, 
-          developers, and open-source contributors. Write documentation, technical articles, and GitHub READMEs with an instant, 
-          side-by-side rendered view of your formatting.
-        </p>
+          {/* SEO & Technical Content */}
+          <section className="tool-seo-content">
+            <h2>About Our Free Markdown to HTML Live Editor & Previewer</h2>
+            <p>
+              The DevToolBox <strong>Markdown Live Editor</strong> is a responsive browser tool engineered for writers, 
+              developers, and open-source contributors. Write documentation, technical articles, and GitHub READMEs with an instant, 
+              side-by-side rendered view of your formatting.
+            </p>
 
-        <h3>Why Choose Our Client-Side Markdown Editor?</h3>
-        <ul>
-          <li><strong>Instant Synchronous Rendering:</strong> No remote markdown compilation API calls; editing feels effortless and instant.</li>
-          <li><strong>Complete HTML Source Inspection:</strong> Toggle directly to the Raw HTML tab to copy compiled markup for your CMS or static site.</li>
-          <li><strong>Zero Signup & 100% Private:</strong> Your writing persists only in your browser session without being uploaded to remote databases.</li>
-        </ul>
+            <h3>Why Choose Our Client-Side Markdown Editor?</h3>
+            <ul>
+              <li><strong>Instant Synchronous Rendering:</strong> No remote markdown compilation API calls; editing feels effortless and instant.</li>
+              <li><strong>Complete HTML Source Inspection:</strong> Toggle directly to the Raw HTML tab to copy compiled markup for your CMS or static site.</li>
+              <li><strong>Zero Signup & 100% Private:</strong> Your writing persists only in your browser session without being uploaded to remote databases.</li>
+            </ul>
 
-        <h3>Frequently Asked Questions</h3>
-        <div className="md-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          {faqs.map((faq, i) => (
-            <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
-              <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
-              <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+            <h3>Frequently Asked Questions</h3>
+            <div className="md-faqs-list" style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {faqs.map((faq, i) => (
+                <div key={i} style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '6px', padding: '1rem' }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', color: '#f8fafc', fontSize: '1.05rem' }}>{faq.question}</h4>
+                  <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.95rem' }}>{faq.answer}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <p style={{ marginTop: '1.5rem' }}>
-          Check out our other developer utilities: Count words with our <Link to="/tools/word-counter">Word Counter</Link>, 
-          take quick notes in our <Link to="/tools/notepad">Online Notepad</Link>, or generate passwords with our <Link to="/tools/password-generator">Password Generator</Link>.
-        </p>
-      </section>
+            <p style={{ marginTop: '1.5rem' }}>
+              Check out our other developer utilities: Count words with our <Link to="/tools/word-counter">Word Counter</Link>, 
+              take quick notes in our <Link to="/tools/notepad">Online Notepad</Link>, or generate passwords with our <Link to="/tools/password-generator">Password Generator</Link>.
+            </p>
+          </section>
+        </>
+      )}
     </div>
   );
 };

@@ -83,6 +83,22 @@
   background: #2563eb;
 }
 
+.md-btn-fullscreen {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #fff;
+  font-weight: 600;
+}
+
+.md-btn-fullscreen:hover {
+  background: #0369a1;
+}
+
+.md-btn-fullscreen.active {
+  background: #10b981;
+  border-color: #10b981;
+}
+
 .md-btn-clear {
   background: #ef4444;
   border-color: #ef4444;
@@ -316,3 +332,74 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Full Page Mode */
+body.md-fullpage-open {
+  overflow: hidden !important;
+}
+
+.md-workspace.fullpage-active {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  z-index: 9999999 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #0f172a !important;
+}
+
+.md-workspace.fullpage-active .md-toolbar {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 0;
+  padding: 0.65rem 1.25rem;
+  flex-shrink: 0;
+}
+
+.md-workspace.fullpage-active .md-split-grid {
+  flex: 1 1 auto;
+  height: calc(100vh - 120px);
+  margin-bottom: 0;
+  border-radius: 0;
+  gap: 0;
+}
+
+.md-workspace.fullpage-active .md-editor-panel,
+.md-workspace.fullpage-active .md-preview-panel {
+  border-radius: 0;
+  border-top: none;
+  border-bottom: none;
+  height: 100%;
+}
+
+.md-workspace.fullpage-active .md-textarea {
+  height: 100% !important;
+  flex: 1 1 auto;
+  resize: none;
+  padding: 1.5rem 2rem;
+}
+
+.md-workspace.fullpage-active .md-preview-content {
+  height: 100% !important;
+  flex: 1 1 auto;
+  padding: 1.5rem 2rem;
+}
+
+.md-workspace.fullpage-active .md-footer-actions {
+  border-top: 1px solid #334155;
+  background: #1e293b;
+  padding: 0.6rem 1.25rem;
+  flex-shrink: 0;
+}
+
