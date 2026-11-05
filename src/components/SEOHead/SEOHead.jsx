@@ -64,8 +64,12 @@ const SEOHead = ({
       <meta name="application-name" content="DevToolBox" />
       <meta name="apple-mobile-web-app-title" content="DevToolBox" />
 
-      {/* Canonical */}
+      {/* Canonical & Favicon Links */}
       <link rel="canonical" href={canonicalFull} />
+      <link rel="icon" type="image/png" sizes="32x32" href={`${siteUrl}/favicon.png?v=2`} />
+      <link rel="icon" type="image/png" sizes="192x192" href={`${siteUrl}/logo.png?v=2`} />
+      <link rel="shortcut icon" href={`${siteUrl}/favicon.ico?v=2`} />
+      <link rel="apple-touch-icon" sizes="180x180" href={`${siteUrl}/apple-touch-icon.png?v=2`} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={fullTitle} />
