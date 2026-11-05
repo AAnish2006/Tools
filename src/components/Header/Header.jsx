@@ -12,7 +12,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          <span className="logo-icon">⚡</span>
+          <img src="/logo.png" alt="DevToolBox Logo" className="logo-image" />
           <span className="logo-text">DevToolBox</span>
         </Link>
         <button 

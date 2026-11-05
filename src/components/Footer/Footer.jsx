@@ -10,7 +10,8 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-section">
             <h3 className="footer-title">
-              <span className="logo-icon">⚡</span> DevToolBox
+              <img src="/logo.png" alt="DevToolBox Logo" className="footer-logo-image" />
+              <span>DevToolBox</span>
             </h3>
             <p className="footer-desc">
               Free online developer tools to boost your productivity. No signup required. 

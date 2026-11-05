@@ -6,7 +6,7 @@ const SEOHead = ({
   keywords, 
   canonicalUrl,
   ogType = 'website',
-  ogImage = '/favicon.svg',
+  ogImage = '/logo.png',
   structuredData,
   faqData
 }) => {
@@ -26,7 +26,8 @@ const SEOHead = ({
       "@type": "WebSite",
       "name": "DevToolBox",
       "alternateName": ["DevToolBox Tools", "DevToolBox Online", "DevToolBox Suite"],
-      "url": "https://tools.trendbit.lol/"
+      "url": "https://tools.trendbit.lol/",
+      "image": "https://tools.trendbit.lol/logo.png"
     }
   ];
 
