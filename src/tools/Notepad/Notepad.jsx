@@ -126,22 +126,40 @@ const Notepad = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Online Notepad - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/notepad",
-    "description": "Free online notepad with auto-save and dark mode. Write notes, code snippets, and drafts directly in your browser with zero signup.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "820",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Online Notepad - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/notepad",
+      "description": "Free online notepad with auto-save and dark mode. Write notes, code snippets, and drafts directly in your browser with zero signup.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Online Notepad",
+          "item": "https://tools.trendbit.lol/tools/notepad"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className={`notepad-page ${isFullPage ? 'page-in-fullpage' : ''}`}>

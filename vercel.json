@@ -32,6 +32,18 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/notepad", "destination": "/tools/notepad", "permanent": true },
+    { "source": "/stopwatch", "destination": "/tools/stopwatch", "permanent": true },
+    { "source": "/word-counter", "destination": "/tools/word-counter", "permanent": true },
+    { "source": "/json-formatter", "destination": "/tools/json-formatter", "permanent": true },
+    { "source": "/image-resizer", "destination": "/tools/image-resizer", "permanent": true },
+    { "source": "/password-generator", "destination": "/tools/password-generator", "permanent": true },
+    { "source": "/base64-encoder", "destination": "/tools/base64-encoder", "permanent": true },
+    { "source": "/markdown-previewer", "destination": "/tools/markdown-previewer", "permanent": true },
+    { "source": "/uuid-generator", "destination": "/tools/uuid-generator", "permanent": true },
+    { "source": "/color-converter", "destination": "/tools/color-converter", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/((?!assets/|ads\\.txt|robots\\.txt|sitemap\\.xml|.*\\.html|.*\\.xml|.*\\.txt|.*\\.svg|.*\\.png|.*\\.ico).*)",

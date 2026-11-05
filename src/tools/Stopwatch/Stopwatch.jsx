@@ -279,22 +279,40 @@ const Stopwatch = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Online Stopwatch & Countdown Timer - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/stopwatch",
-    "description": "Free online stopwatch with lap recording and countdown timer with presets and audio alert. High precision, fullscreen mode, 100% browser-based.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1520",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Online Stopwatch & Countdown Timer - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/stopwatch",
+      "description": "Free online stopwatch with lap recording and countdown timer with presets and audio alert. High precision, fullscreen mode, 100% browser-based.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Online Stopwatch & Countdown Timer",
+          "item": "https://tools.trendbit.lol/tools/stopwatch"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className={`stopwatch-page ${isFullscreen ? 'page-in-fullscreen' : ''}`}>

@@ -18,13 +18,6 @@ const Home = () => {
         "@type": "Offer",
         "price": "0.00",
         "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "1420",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
   ];

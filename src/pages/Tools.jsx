@@ -77,6 +77,32 @@ const ToolsIndex = () => {
     }
   ];
 
+  const structuredData = [
+    {
+      "@type": "CollectionPage",
+      "name": "Free Online Developer Tools Suite - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools",
+      "description": "Collection of free, client-side developer utilities including stopwatch, notepad, word counter, json formatter, and image resizer."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="tools-page">
       <SEOHead
@@ -84,6 +110,7 @@ const ToolsIndex = () => {
         description="Access free browser-based developer utilities: Online Stopwatch & Timer, Online Notepad, Word Counter, JSON Formatter, Image Resizer, Password Generator, Base64 Encoder, Markdown Previewer, UUID Generator, and Color Contrast Checker."
         keywords="free online tools, online stopwatch, countdown timer, developer tools, text editor, word counter, JSON formatter, image resizer, password generator, base64 encoder, markdown previewer, uuid generator, color converter"
         canonicalUrl="/tools"
+        structuredData={structuredData}
       />
       <h1 className="tools-page-title">Free Online Developer Tools</h1>
       <p className="tools-page-subtitle">

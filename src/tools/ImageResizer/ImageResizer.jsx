@@ -206,22 +206,40 @@ const ImageResizer = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Online Image Resizer - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/image-resizer",
-    "description": "Free online image resizer. Resize PNG, JPG, and WEBP images directly in your browser with custom dimensions and aspect ratio lock.",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "640",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Online Image Resizer - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/image-resizer",
+      "description": "Free online image resizer. Resize PNG, JPG, and WEBP images directly in your browser with custom dimensions and aspect ratio lock.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Image Resizer",
+          "item": "https://tools.trendbit.lol/tools/image-resizer"
+        }
+      ]
     }
-  };
+  ];
 
   const compressionPercent = originalSize > 0 && resizedSize > 0
     ? Math.round(((originalSize - resizedSize) / originalSize) * 100)

@@ -249,22 +249,40 @@ const MarkdownPreviewer = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Markdown to HTML Live Preview & Editor - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/markdown-previewer",
-    "description": "Free online markdown editor and live HTML previewer with split-screen editing, syntax toolbar, and export.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1200",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Markdown to HTML Live Preview & Editor - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/markdown-previewer",
+      "description": "Free online markdown editor and live HTML previewer with split-screen editing, syntax toolbar, and export.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markdown Previewer",
+          "item": "https://tools.trendbit.lol/tools/markdown-previewer"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className={`markdown-page ${isFullPage ? 'page-in-fullpage' : ''}`}>

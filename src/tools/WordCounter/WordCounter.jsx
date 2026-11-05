@@ -171,22 +171,40 @@ const WordCounter = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Word Counter & Character Checker - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/word-counter",
-    "description": "Free online word counter and social media character limit checker. Count words, characters, sentences, paragraphs with live overflow highlighting.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "950",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Word Counter & Character Checker - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/word-counter",
+      "description": "Free online word counter and social media character limit checker. Count words, characters, sentences, paragraphs with live overflow highlighting.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Word Counter",
+          "item": "https://tools.trendbit.lol/tools/word-counter"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="wordcounter-page">

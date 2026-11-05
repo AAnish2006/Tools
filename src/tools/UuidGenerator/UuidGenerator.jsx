@@ -157,22 +157,40 @@ const UuidGenerator = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "UUID / GUID Generator & Unix Timestamp Converter - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/uuid-generator",
-    "description": "Free online UUID v4 and GUID generator with batch generation, customizable formats, and Unix epoch timestamp converter.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1350",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "UUID / GUID Generator & Unix Timestamp Converter - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/uuid-generator",
+      "description": "Free online UUID v4 and GUID generator with batch generation, customizable formats, and Unix epoch timestamp converter.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "UUID / GUID Generator",
+          "item": "https://tools.trendbit.lol/tools/uuid-generator"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="uuid-page">

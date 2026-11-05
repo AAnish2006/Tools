@@ -12,13 +12,31 @@ const BlogList = () => {
     ? blogPosts 
     : blogPosts.filter(p => p.category === selectedCategory);
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "DevToolBox Developer & SEO Blog",
-    "description": "Developer tips, SEO optimization guides, and productivity tutorials. Learn how to use free online tools effectively.",
-    "url": "https://tools.trendbit.lol/blog"
-  };
+  const structuredData = [
+    {
+      "@type": "Blog",
+      "name": "DevToolBox Developer & SEO Blog",
+      "description": "Developer tips, SEO optimization guides, and productivity tutorials. Learn how to use free online tools effectively.",
+      "url": "https://tools.trendbit.lol/blog"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://tools.trendbit.lol/blog"
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="blog-page">
@@ -126,24 +144,49 @@ const BlogPost = () => {
     );
   }
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.excerpt,
-    "datePublished": post.date,
-    "author": { 
-      "@type": "Organization", 
-      "name": post.author,
-      "url": "https://tools.trendbit.lol/about"
+  const structuredData = [
+    {
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": post.date,
+      "dateModified": post.lastModified || post.date,
+      "author": { 
+        "@type": "Organization", 
+        "name": post.author,
+        "url": "https://tools.trendbit.lol/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DevToolBox",
+        "url": "https://tools.trendbit.lol"
+      },
+      "keywords": post.keywords
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "DevToolBox",
-      "url": "https://tools.trendbit.lol"
-    },
-    "keywords": post.keywords
-  };
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://tools.trendbit.lol/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": `https://tools.trendbit.lol/blog/${post.id}`
+        }
+      ]
+    }
+  ];
 
   // Markdown-like parser for clean rendering
   const renderContent = (content) => {

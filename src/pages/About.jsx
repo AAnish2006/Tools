@@ -3,14 +3,32 @@ import SEOHead from '../components/SEOHead/SEOHead';
 import './About.css';
 
 const About = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "DevToolBox",
-    "url": "https://tools.trendbit.lol",
-    "description": "Free online developer tools platform providing notepad, word counter, and JSON formatter.",
-    "foundingDate": "2024"
-  };
+  const structuredData = [
+    {
+      "@type": "Organization",
+      "name": "DevToolBox",
+      "url": "https://tools.trendbit.lol",
+      "description": "Free online browser-based developer tools suite including stopwatch, notepad, word counter, JSON formatter, image resizer, and cryptographic utilities.",
+      "foundingDate": "2024"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://tools.trendbit.lol/about"
+        }
+      ]
+    }
+  ];
 
   return (
     <div className="about-page">
@@ -44,16 +62,44 @@ const About = () => {
         <h2>What We Offer</h2>
         <div className="about-offerings">
           <div className="offering">
+            <h3>⏱️ <Link to="/tools/stopwatch">Online Stopwatch & Timer</Link></h3>
+            <p>Millisecond-precision stopwatch with split lap tracking, countdown timer presets, and fullscreen display.</p>
+          </div>
+          <div className="offering">
             <h3>📝 <Link to="/tools/notepad">Online Notepad</Link></h3>
-            <p>A distraction-free text editor with auto-save, perfect for quick notes and code snippets.</p>
+            <p>A distraction-free text editor with default dark mode, auto-save, and full-page expansion.</p>
           </div>
           <div className="offering">
             <h3>🔢 <Link to="/tools/word-counter">Word Counter</Link></h3>
-            <p>Comprehensive text analysis with word count, character count, reading time, and keyword density.</p>
+            <p>Real-time word, character, and sentence analytics with social media character limit validation.</p>
           </div>
           <div className="offering">
             <h3>{'{ } '}<Link to="/tools/json-formatter">JSON Formatter</Link></h3>
-            <p>Format, validate, and beautify JSON data with syntax highlighting and error detection.</p>
+            <p>Format, validate, beautify, and minify JSON data with instant syntax error detection.</p>
+          </div>
+          <div className="offering">
+            <h3>🖼️ <Link to="/tools/image-resizer">Image Resizer</Link></h3>
+            <p>Resize JPG, PNG, and WEBP images locally using HTML5 Canvas with custom dimensions and social presets.</p>
+          </div>
+          <div className="offering">
+            <h3>🔑 <Link to="/tools/password-generator">Password Generator</Link></h3>
+            <p>Cryptographically secure password and passphrase generator with entropy score and crack-time metrics.</p>
+          </div>
+          <div className="offering">
+            <h3>📦 <Link to="/tools/base64-encoder">Base64 & URL Encoder</Link></h3>
+            <p>Encode and decode UTF-8 text, URL query strings, and convert image and document files into Data URIs.</p>
+          </div>
+          <div className="offering">
+            <h3>📝 <Link to="/tools/markdown-previewer">Markdown Previewer</Link></h3>
+            <p>Live side-by-side Markdown to HTML editor and previewer with formatting toolbar and instant export.</p>
+          </div>
+          <div className="offering">
+            <h3>🆔 <Link to="/tools/uuid-generator">UUID / GUID Generator</Link></h3>
+            <p>Generate RFC 4122 v4 UUID identifiers in bulk with custom casing, and convert Unix epoch timestamps.</p>
+          </div>
+          <div className="offering">
+            <h3>🎨 <Link to="/tools/color-converter">Color Converter & Contrast</Link></h3>
+            <p>Convert HEX, RGB, and HSL colors, inspect tints and shades, and audit WCAG 2.1 AA/AAA contrast ratios.</p>
           </div>
         </div>
       </section>

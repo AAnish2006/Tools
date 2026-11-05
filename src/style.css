@@ -10,7 +10,7 @@
   --bg-main: #ffffff;
   --bg-subtle: #f8fafc;
   --border-color: #e2e8f0;
-  --font-sans: 'Times New Roman', Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
 }
 
@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font-sans);
   color: var(--text-main);
   background-color: #f1f5f9;
   line-height: 1.6;
@@ -47,7 +47,7 @@ a:hover {
 }
 
 button, input, select, textarea {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font-sans);
   font-size: inherit;
 }
 
@@ -58,7 +58,7 @@ img, svg {
 
 /* Base Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font-sans);
   color: var(--text-main);
   line-height: 1.25;
 }

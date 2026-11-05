@@ -113,22 +113,40 @@ const JsonFormatter = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "JSON Formatter & Validator - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/json-formatter",
-    "description": "Free online JSON formatter, validator, and beautifier with error detection and minification. 100% client-side privacy.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "780",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "JSON Formatter & Validator - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/json-formatter",
+      "description": "Free online JSON formatter, validator, and beautifier with error detection and minification. 100% client-side privacy.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JSON Formatter",
+          "item": "https://tools.trendbit.lol/tools/json-formatter"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="json-page">

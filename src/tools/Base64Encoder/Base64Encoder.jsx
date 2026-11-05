@@ -168,22 +168,40 @@ const Base64Encoder = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Base64 & URL Encoder / Decoder - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/base64-encoder",
-    "description": "Free online Base64 encoder, decoder, file to data URL converter, and URL percent encoder with UTF-8 support.",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "980",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Base64 & URL Encoder / Decoder - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/base64-encoder",
+      "description": "Free online Base64 encoder, decoder, file to data URL converter, and URL percent encoder with UTF-8 support.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Base64 & URL Encoder",
+          "item": "https://tools.trendbit.lol/tools/base64-encoder"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="base64-page">

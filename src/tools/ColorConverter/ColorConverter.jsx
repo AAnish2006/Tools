@@ -241,22 +241,40 @@ const ColorConverter = () => {
     }
   ];
 
-  const structuredData = {
-    "@type": "WebApplication",
-    "name": "Color Converter & WCAG Contrast Checker - DevToolBox",
-    "url": "https://tools.trendbit.lol/tools/color-converter",
-    "description": "Free online color converter between HEX, RGB, HSL and WCAG 2.1 accessibility contrast ratio checker with tints, shades, and palettes.",
-    "applicationCategory": "DesignApplication",
-    "operatingSystem": "All modern browsers",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1410",
-      "bestRating": "5",
-      "worstRating": "1"
+  const structuredData = [
+    {
+      "@type": "WebApplication",
+      "name": "Color Converter & WCAG Contrast Checker - DevToolBox",
+      "url": "https://tools.trendbit.lol/tools/color-converter",
+      "description": "Free online color converter between HEX, RGB, HSL and WCAG 2.1 accessibility contrast ratio checker with tints, shades, and palettes.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "All modern browsers",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tools.trendbit.lol/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://tools.trendbit.lol/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Color Converter & Contrast",
+          "item": "https://tools.trendbit.lol/tools/color-converter"
+        }
+      ]
     }
-  };
+  ];
 
   return (
     <div className="color-page">

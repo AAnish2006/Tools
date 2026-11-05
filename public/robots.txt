@@ -2,7 +2,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /*?*
 
 # Sitemap location
 Sitemap: https://tools.trendbit.lol/sitemap.xml

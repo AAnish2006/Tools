@@ -7,7 +7,7 @@ import './style.css';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
+  const appElement = (
     <React.StrictMode>
       <HelmetProvider>
         <BrowserRouter>
@@ -16,4 +16,10 @@ if (rootElement) {
       </HelmetProvider>
     </React.StrictMode>
   );
+
+  if (rootElement.hasChildNodes()) {
+    ReactDOM.hydrateRoot(rootElement, appElement);
+  } else {
+    ReactDOM.createRoot(rootElement).render(appElement);
+  }
 }
